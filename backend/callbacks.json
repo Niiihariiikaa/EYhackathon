@@ -1,0 +1,12 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "phone": "1234567890",
+      "date": "2025-01-10",
+      "time": "10:00",
+      "claim_amount": 5000,
+      "priority": 2
+    }
+  ]
+  
