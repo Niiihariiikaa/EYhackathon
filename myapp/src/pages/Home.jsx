@@ -56,9 +56,7 @@ const Home = () => {
   return (
     <div className="flex">
       {/* Sidebar (Fixed width) */}
-      <div className="w-64 bg-gray-800 text-white h-screen p-6">
-        <div className="text-center font-semibold text-xl mb-6">Insurance Claims Hub</div>
-      </div>
+     
 
       {/* Main Content (Full width excluding sidebar) */}
       <div className="flex-1 p-6 overflow-hidden">

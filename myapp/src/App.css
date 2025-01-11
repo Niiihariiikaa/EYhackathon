@@ -1,0 +1,145 @@
+/* App.css */
+body{
+  background-color: white;
+  color: black;
+  margin-left: 270px;
+}
+
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.top-right-icons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.voice-assistant-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+.voice-assistant-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.voice-assistant-btn:hover {
+  background-color: #45a049;
+}
+
+.transcript-display {
+  margin-top: 20px;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+.game-icon {
+  /* margin-right: -5px; Space between game icon and profile icon */
+  width: 150px; /* Adjust the size of the image */
+  height: 150px; /* Adjust the size of the image */
+  cursor: pointer;
+}
+.game-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -5px; /* Space between game icon and profile icon */
+}
+.game-number {
+  position: absolute;
+  top: 42%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  color: #FFDF00; /* Adjust the text color */
+  font-weight: bold;
+  font-size: 40px; /* Adjust the font size */
+}
+.voice-assistant-wrapper {
+  position: fixed;
+  bottom: 15%;
+  right: 10%;
+  z-index: 1000;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+.voice-assistant-btn {
+  /* background: transparent; */
+  border: none;
+  cursor: pointer;
+ 
+}
+.user-icon{
+  position: relative;
+  margin-bottom:20px;
+}
+.user-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.user-icon {
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.user-info-dropdown {
+  position: absolute;
+  top: 70px; /* Adjust based on icon size */
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 200px;
+  z-index: 1000;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.user-icon-wrapper:hover .user-info-dropdown,
+.user-info-dropdown.show {
+  display: block;
+}
+
+.user-info-dropdown p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: black;
+}
+
+.user-info-dropdown p.user-name {
+  font-weight: bold;
+}
+
+.user-info-dropdown p.user-email,
+.user-info-dropdown p.game-points {
+  font-size: 12px;
+  color: black;
+}

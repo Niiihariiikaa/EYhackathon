@@ -25,45 +25,73 @@ const AutomatedCallbacks = () => {
     // Submit callback to the backend
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+      
+        const token = localStorage.getItem('token'); // Retrieve token from localStorage or wherever you're storing it
+      
         const callbackData = {
-            name,
-            phone,
-            date,
-            time,
-            claim_amount: claimAmount,
+          name,
+          phone,
+          date,
+          time,
+          claim_amount: claimAmount,
         };
-
+      
         try {
-            const response = await fetch('http://localhost:5000/schedule', {
-                method: 'POST',
+          const response = await fetch('http://localhost:5000/schedule', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`, // Include the token in the Authorization header
+            },
+            body: JSON.stringify(callbackData),
+          });
+      
+          if (response.ok) {
+            alert('Callback scheduled successfully!');
+      
+            // Immediately update the callbacks state without re-fetching
+            setCallbacks((prevCallbacks) => [
+              ...prevCallbacks,
+              callbackData,
+            ]);
+      
+            // Clear the input fields
+            setName('');
+            setPhone('');
+            setDate('');
+            setTime('');
+            setClaimAmount('');
+          } else {
+            alert('Error scheduling callback');
+          }
+        } catch (error) {
+          console.error('Error submitting callback:', error);
+          alert('Error scheduling callback');
+        }
+    };
+
+    // Handle deleting a callback (mark done)
+    const handleDelete = async (id) => {
+        const token = localStorage.getItem('token'); // Retrieve token from localStorage or wherever you're storing it
+      
+        try {
+            const response = await fetch(`http://localhost:5000/callbacks/${id}`, {
+                method: 'DELETE',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
                 },
-                body: JSON.stringify(callbackData),
             });
 
             if (response.ok) {
-                alert('Callback scheduled successfully!');
-                
-                // Immediately update the callbacks state without re-fetching
-                setCallbacks((prevCallbacks) => [
-                    ...prevCallbacks,
-                    callbackData,
-                ]);
-
-                // Clear the input fields
-                setName('');
-                setPhone('');
-                setDate('');
-                setTime('');
-                setClaimAmount('');
+                // Remove the callback from the state
+                setCallbacks(callbacks.filter((callback) => callback._id !== id));
+                alert('Callback marked as done!');
             } else {
-                alert('Error scheduling callback');
+                alert('Error marking callback as done');
             }
         } catch (error) {
-            console.error('Error submitting callback:', error);
-            alert('Error scheduling callback');
+            console.error('Error deleting callback:', error);
+            alert('Error marking callback as done');
         }
     };
 
@@ -203,12 +231,13 @@ const AutomatedCallbacks = () => {
                             <th style={{ padding: '12px', border: '1px solid #ddd' }}>Date</th>
                             <th style={{ padding: '12px', border: '1px solid #ddd' }}>Time</th>
                             <th style={{ padding: '12px', border: '1px solid #ddd' }}>Claim Amount</th>
+                            <th style={{ padding: '12px', border: '1px solid #ddd' }}>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {callbacks.length === 0 ? (
                             <tr>
-                                <td colSpan="5" style={{ textAlign: 'center', padding: '20px', color: '#999' }}>No callbacks scheduled yet.</td>
+                                <td colSpan="6" style={{ textAlign: 'center', padding: '20px', color: '#999' }}>No callbacks scheduled yet.</td>
                             </tr>
                         ) : (
                             callbacks.map((callback, index) => (
@@ -218,6 +247,21 @@ const AutomatedCallbacks = () => {
                                     <td style={{ padding: '12px', border: '1px solid #ddd' }}>{callback.date}</td>
                                     <td style={{ padding: '12px', border: '1px solid #ddd' }}>{callback.time}</td>
                                     <td style={{ padding: '12px', border: '1px solid #ddd' }}>₹{callback.claim_amount}</td>
+                                    <td style={{ padding: '12px', border: '1px solid #ddd' }}>
+                                        <button 
+                                            onClick={() => handleDelete(callback._id)} 
+                                            style={{
+                                                padding: '8px 16px',
+                                                backgroundColor: '#FF6347',
+                                                color: '#fff',
+                                                borderRadius: '8px',
+                                                border: 'none',
+                                                cursor: 'pointer',
+                                            }}
+                                        >
+                                            Mark Done
+                                        </button>
+                                    </td>
                                 </tr>
                             ))
                         )}

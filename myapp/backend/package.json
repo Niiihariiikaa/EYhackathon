@@ -12,11 +12,16 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@google-ai/generativelanguage": "^2.8.0",
+    "@google/generative-ai": "^0.21.0",
     "@mui/material": "^6.3.1",
     "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.3",
     "mysql2": "^3.12.0",
     "vader-sentiment": "^1.1.3"

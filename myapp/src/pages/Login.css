@@ -1,0 +1,110 @@
+/* General Styling */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+*{
+    font-family: Poppins;
+}
+body.login {
+    margin: 0;
+    background-color: #0d1b2a; /* Dark Blue */
+    color: #ffffff; /* White */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .login-card {
+    background-color: #1b263b; /* Slightly lighter dark blue */
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+  }
+  
+  .login-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .login-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #a9a9a9;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label{
+    font-size: 14px;
+    color: #a9a9a9;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  input.login {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0d1b2a; /* Dark Blue */
+    color: #ffffff;
+    border: 1px solid #415a77;
+    font-size: 14px;
+  }
+  input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #0d1b2a; /* Dark Blue */
+    color: #ffffff;
+    border: 1px solid #415a77;
+    font-size: 14px;
+
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #627d98;
+  }
+  
+  .login-button {
+    padding: 10px;
+    background-color: #1e90ff; /* Dodger Blue */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #1c86ee; /* Slightly darker Dodger Blue */
+  }
+  
+  .login-button:active {
+    background-color: #1666c1; /* Even darker blue */
+  }
+  
