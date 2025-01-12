@@ -252,7 +252,10 @@ const styles = {
   },
   chartWrapper: {
     marginTop: '30px',
+    color:'rgb(44, 62, 80)',
   },
+
+  
 };
 
 export default ClientSentiment;

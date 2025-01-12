@@ -13,6 +13,7 @@ const VoiceAssistant = () => {
     'call back scheduling': '/features',
     'sentiment analysis': '/careers',
     'claim forecasting': '/contact',
+    'internships and courses':'internship-courses',
     dashboard: '/dashboard',
   };
 

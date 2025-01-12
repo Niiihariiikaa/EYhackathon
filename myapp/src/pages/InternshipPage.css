@@ -1,0 +1,45 @@
+.internship-page {
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .internship-page h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .internship-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .internship-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .internship-item h3 {
+    color: #333;
+  }
+  
+  .apply-now {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .apply-now .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .apply-now .btn:hover {
+    background-color: #0056b3;
+  }
+   

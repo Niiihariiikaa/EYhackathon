@@ -48,7 +48,11 @@ body {
 
 /* Custom Card Icon colors */
 .text-blue-600 {
-    color: #3b82f6;
+    color: #408EC6;
+}
+.text-blue-500 {
+    color: white;
+    background-color: #408EC6;
 }
 
 .text-green-600 {
@@ -61,6 +65,9 @@ body {
 
 .text-red-600 {
     color: #ef4444;
+}
+.text-gray-800{
+    color:   #1E2761;
 }
 
 .recent-claims {
@@ -88,3 +95,65 @@ body {
         width: 100%; /* Full-width on smaller screens */
     }
 }
+/* Page Container */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-left: 200px;
+  }
+  
+  /* Stats Cards Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Add spacing between cards */
+  }
+  
+  /* Stats Card */
+  .stats-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    justify-content: flex-start;
+  }
+  
+  .stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Recent Claims Table */
+  .tble {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .tble th,
+  .tble td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .tble th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #408EC6;
+  }
+  
+  .tble tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .tble tr:hover {
+    background-color: #f1f1f1;
+  }
+  

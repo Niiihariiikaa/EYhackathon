@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="/myapp/public/Proxima Nova (1).png">
+    <title>ClaimSync</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+        /* Existing styles from the provided code */
+        :root {
+            /* --primary: #2E2E38;
+            --accent: #FFE600;
+            --text-light: #FFFFFF;
+            --bg-dark: #000000; */
+            --primary: #FFFFFF; /* White */
+--accent: #FFD700; /* Gold (a softer yellow) */
+--text-light: #000000; /* Black for contrast */
+--bg-dark: #FFFFE0; /* Light Yellow (Lemon Chiffon) */
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .header {
+            background-color: var(--bg-dark);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--accent);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .sub-nav {
+            background-color: var(--primary);
+            padding: 1rem 2rem;
+        }
+
+        .sub-nav-items {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .sub-nav-items a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .sub-nav-items a.active {
+            background-color: var(--accent);
+            color: var(--primary);
+            border-radius: 4px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-illustration {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        /* Line art SVG styling */
+        .line-art {
+            stroke: var(--text-light);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        .accent-element {
+            fill: var(--accent);
+        }
+
+        /* Additional styles for new sections */
+        .stats-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stats-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .stat-description {
+            font-size: 1rem;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .services-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .service-tag {
+            color: var(--accent);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent);
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .learn-more:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: var(--primary);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-column ul li a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+        .areas-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .areas-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .area-item {
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .area-item:hover {
+            background-color: rgba(255, 230, 0, 0.1);
+        }
+
+        .area-item h3 {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .area-item p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="Proxima Nova (1).png" alt=""  height="200px">
+            </div>
+            <div class="nav-menu">
+                <a href="#what-we-do">What we do</a>
+                <a href="#insights">Insights</a>
+                <a href="#about">About</a>
+                <a href="#careers">Careers</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <nav class="sub-nav">
+        <div class="sub-nav-items">
+            <a href="#" class="active">What to do</a>
+            <a href="#">Segments</a>
+            <a href="#">What's trending</a>
+            <a href="#">Leaders</a>
+            <a href="#">Careers</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Managed services for<br>building better</h1>
+            <p>Transform your organization through strategic managed services that optimize costs, accelerate growth, and drive sustainable value at scale.</p>
+        </div>
+        <div class="hero-illustration">
+            <svg viewBox="0 0 500 400" class="line-art">
+                <!-- Clock/Time element -->
+                <circle cx="100" cy="80" r="30" class="line-art"/>
+                <line x1="100" y1="80" x2="100" y2="65" class="line-art"/>
+                <line x1="100" y1="80" x2="115" y2="80" class="line-art"/>
+                
+                <!-- Plane -->
+                <path d="M150 120 L200 100 L240 120 L200 110 Z" class="line-art"/>
+                
+                <!-- Globe -->
+                <circle cx="300" cy="150" r="50" class="line-art"/>
+                <path d="M250 150 Q300 100 350 150" class="line-art"/>
+                <path d="M250 150 Q300 200 350 150" class="line-art"/>
+                
+                <!-- Boxes and conveyor -->
+                <rect x="50" y="250" width="40" height="40" class="line-art"/>
+                <rect x="150" y="250" width="40" height="40" class="line-art"/>
+                <path d="M50 300 L400 300" class="line-art"/>
+                
+                <!-- Accent elements -->
+                <rect x="100" y="200" width="20" height="20" class="accent-element"/>
+                <rect x="300" y="250" width="20" height="20" class="accent-element"/>
+            </svg>
+        </div>
+    </main>
+
+    <section class="stats-section">
+        <h2 class="stats-title">Why managed services?</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1.4x</div>
+                <div class="stat-description">higher operating margins</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2.2x</div>
+                <div class="stat-description">greater total shareholder returns (three-year)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">42%</div>
+                <div class="stat-description">improvement in agile product and process innovation</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">34%</div>
+                <div class="stat-description">better at reducing energy consumption and greenhouse gas emissions</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <h2 class="stats-title">Reinvent with strategic managed services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-tag">Managed Data, AI and Automation</div>
+                <h3 class="service-title">Do you have the insights to make real-time decisions?</h3>
+                <div>2x data modernization attributes are reported by reinvention-ready organizations</div>
+                <a href="#" class="learn-more">Learn more →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-tag">Global Capability Centers</div>
+                <h3 class="service-title">Access talent and innovation with global capability centers</h3>
+                <a href="#" class="learn-more">Learn more →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-tag">Business Process Services</div>
+                <h3 class="service-title">Are your operations adding as much business value as possible?</h3>
+                <a href="#" class="learn-more">Learn more →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-tag">Application Managed Services</div>
+                <h3 class="service-title">Don't let application complexity hold you back.</h3>
+                <a href="#" class="learn-more">Learn more →</a>
+            </div>
+        </div>
+    </section>
+    <section class="areas-section">
+        <h2 class="areas-title">Areas we support</h2>
+        <div class="areas-grid">
+            <div class="area-item">
+                <h3>Finance operations</h3>
+                <p>Transform financial processes and operations</p>
+            </div>
+            <div class="area-item">
+                <h3>Supply chain</h3>
+                <p>Optimize supply chain efficiency</p>
+            </div>
+            <div class="area-item">
+                <h3>Digital engineering & manufacturing</h3>
+                <p>Reimagine products and production</p>
+            </div>
+            <div class="area-item">
+                <h3>Banking & capital markets</h3>
+                <p>Transform financial services</p>
+            </div>
+            <div class="area-item">
+                <h3>Insurance</h3>
+                <p>Innovate insurance solutions</p>
+            </div>
+            <div class="area-item">
+                <h3>Health & life sciences</h3>
+                <p>Advance healthcare delivery</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Consulting</a></li>
+                    <li><a href="#">Strategy</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Operations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Industries</h3>
+                <ul>
+                    <li><a href="#">Financial Services</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Healthcare</a></li>
+                    <li><a href="#">Manufacturing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Our People</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

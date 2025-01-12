@@ -15,19 +15,19 @@ body{
 
 .top-right-icons {
   position: fixed;
-  top: 20px;
+  top: -25px;
   right: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
 .voice-assistant-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  margin-top: 10px;
-  margin-left: 80px;
+  margin-top: -18px;
+  margin-left: 45px;
 }
 
 .voice-assistant-btn {
@@ -57,8 +57,8 @@ footer {
 
 .game-icon {
   /* margin-right: -5px; Space between game icon and profile icon */
-  width: 150px; /* Adjust the size of the image */
-  height: 150px; /* Adjust the size of the image */
+  width: 140px; /* Adjust the size of the image */
+  height: 140px; /* Adjust the size of the image */
   cursor: pointer;
 }
 .game-icon-container {
@@ -79,8 +79,8 @@ footer {
 }
 .voice-assistant-wrapper {
   position: fixed;
-  bottom: 15%;
-  right: 10%;
+  bottom: 29%;
+  right: 5%;
   z-index: 1000;
   background-color: white;
   padding: 20px;
@@ -142,4 +142,27 @@ footer {
 .user-info-dropdown p.game-points {
   font-size: 12px;
   color: black;
+}
+
+.custom-tooltip {
+  visibility: hidden;
+  background-color: rgb(21, 25, 66);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 1%; /* Position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap; /* Prevent text from wrapping */
+  font-weight: bold;
+}
+
+.game-icon:hover +.custom-tooltip {
+  visibility: visible;
+  opacity: 1;
 }

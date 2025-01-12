@@ -14,8 +14,7 @@ import Login from './pages/Login'; // Import the Login component
 import './pages/Login.css'; // Import the Login CSS
 import DashboardCard from './components/DashboardCard'; // Import DashboardCard component
 import VoiceAssistant from './components/VoiceAssistant'; // Import VoiceAssistant
-// Import Bootstrap CSS and JS
-
+import InternshipCoursesTogglePage from './pages/InternshipCoursesTogglePage'; // Import the new page
 
 // Create a helper component to manage location-based styles and logic
 const LocationWrapper = ({ children, isLoggedIn }) => {
@@ -70,49 +69,49 @@ const App = () => {
               <Route path="/features" element={isLoggedIn ? <AutomatedCallback /> : <Navigate to="/login" />} />
               <Route path="/careers" element={isLoggedIn ? <ClientSentiment /> : <Navigate to="/login" />} />
               <Route path="/contact" element={isLoggedIn ? <ClaimForecasting /> : <Navigate to="/login" />} />
-
-              {/* Add route for DashboardCard */}
               <Route path="/dashboard" element={isLoggedIn ? <DashboardCard /> : <Navigate to="/login" />} />
+              
+              {/* New route for InternshipCoursesTogglePage */}
+              <Route path="/internship-courses" element={isLoggedIn ? <InternshipCoursesTogglePage /> : <Navigate to="/login" />} />
             </Routes>
           </main>
 
           {/* Top Right Icon Container */}
           {isLoggedIn && (
-  <div className="top-right-icons">
-    {/* Game Icon (Using PNG Image) */}
-    <div className="game-icon-container">
-      <img src="src/assets/Proxima Nova.png" alt="Game Icon" className="game-icon" />
-      <span className="game-number">5</span>
-    <div className="user-icon-wrapper">
-      <FaUserCircle
-        className="user-icon"
-        size={60}
-        onClick={() => setUserMenuVisible(!isUserMenuVisible)} // Toggle visibility
-      />
-      {isUserMenuVisible && (
-        <div className="user-info-dropdown">
-          <p className="user-name">Admin</p>
-          <p className="user-email">  <b>Mail:</b>  admin@gmail.com</p>
-          <p className="game-points"> <b> Game Points: </b> 5</p>
-        </div>
-      )}
-    </div>
-    </div>
+            <div className="top-right-icons">
+              {/* Game Icon (Using PNG Image) */}
+              <div className="game-icon-container">
+                <img src="src/assets/Proxima Nova.png" alt="Game Icon" className="game-icon"  />
+                <span className="custom-tooltip"> CS Game Points: 5 <br /> No. of Games Played:2</span>
+                <span className="game-number">5</span>
+              </div>
+                <div className="user-icon-wrapper">
+                  <FaUserCircle
+                    className="user-icon"
+                    size={50}
+                    onClick={() => setUserMenuVisible(!isUserMenuVisible)} // Toggle visibility
+                  />
+                  {isUserMenuVisible && (
+                    <div className="user-info-dropdown">
+                      <p className="user-name">Admin</p>
+                      <p className="user-email"><b>Mail:</b> admin@gmail.com</p>
+                      <p className="game-points"><b>Game Points:</b> 5</p>
+                    </div>
+                  )}
+                </div>
 
-    {/* User Icon with Dropdown */}
-
-    {/* Voice Assistant Icon */}
-    <div className="voice-assistant-container">
-      <button
-        className="voice-assistant-btn"
-        onClick={() => setIsVoiceAssistantVisible(!isVoiceAssistantVisible)} // Toggle visibility
-      >
-        <FaMicrophoneAlt size={30} />
-      </button>
-      <span className="voice-assistant-label">Voice Assistant</span>
-    </div>
-  </div>
-)}
+              {/* Voice Assistant Icon */}
+              <div className="voice-assistant-container">
+                <button
+                  className="voice-assistant-btn"
+                  onClick={() => setIsVoiceAssistantVisible(!isVoiceAssistantVisible)} // Toggle visibility
+                >
+                  <FaMicrophoneAlt size={25} />
+                </button>
+                
+              </div>
+            </div>
+          )}
           {/* Render VoiceAssistant if visible */}
           {isVoiceAssistantVisible && (
             <div className="voice-assistant-wrapper">

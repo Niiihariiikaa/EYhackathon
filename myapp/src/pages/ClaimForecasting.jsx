@@ -178,22 +178,26 @@ const barChartOptions = {
 const styles = {
   container: {
     fontFamily: 'Poppins, sans-serif',
-    padding: '20px',
+    padding: '40px 20px',
     flexWrap: 'Wrap',
     maxWidth: '1000px',
     margin: '0 auto',
     
     justifyContent: 'space-between',
-    backgroundColor: '#f9fafb',
+    backgroundColor: '#dde7f2',
     borderRadius: '10px',
     boxShadow: '0 6px 15px rgba(0, 0, 0, 0.1)',
+    position:'relative',
+    marginLeft:'20px',
+    marginTop:'50px',
   },
   heading: {
     fontSize: '2.5em',
     textAlign: 'center',
-    color: '#333',
+    
     marginBottom: '30px',
     fontWeight: 'bold',
+    color:'#0562ce',
   },
   cardContainer: {
     width:'1000px',
@@ -217,11 +221,11 @@ const styles = {
     fontSize: '1.4em',
     marginBottom: '10px',
     fontWeight: 'bold',
-    color: '#333',
+    color: 'rgb(236 139 24)',
   },
   cardBody: {
     fontSize: '1.2em',
-    color: '#555',
+    color: 'rgb(10 0 0)',
   },
   graphSection: {
     display: 'flex',
@@ -242,38 +246,53 @@ const styles = {
     fontSize: '1.8em',
     fontWeight: 'bold',
     marginBottom: '20px',
-    color: '#333',
+    color: 'rgb(236 139 24)',
   },
-  forecastTable: {
-    marginTop: '30px',
-    backgroundColor: '#fff',
-    borderRadius: '8px',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-    padding: '20px',
-  },
-  tableTitle: {
-    fontSize: '1.8em',
-    marginBottom: '20px',
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  table: {
-    width: '100%',
-    borderCollapse: 'collapse',
-    borderRadius: '8px',
-  },
-  tableHeader: {
-    backgroundColor: '#f0f0f0',
-    fontSize: '1.2em',
-    color: '#333',
-    padding: '10px',
-  },
-  tableData: {
-    fontSize: '1.1em',
-    textAlign: 'center',
-    padding: '10px',
-    borderBottom: '1px solid #ddd',
-  },
+  
+    forecastTable: {
+      margin: '20px auto',
+      padding: '20px',
+      maxWidth: '600px',
+      borderRadius: '10px',
+      backgroundColor: '#f9f9f9',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    },
+    tableTitle: {
+      textAlign: 'center',
+      marginBottom: '10px',
+      fontSize: '1.5rem',
+      color: '#0562ce',
+      fontWeight: 'bold',
+    },
+    table: {
+      width: '100%',
+      borderCollapse: 'collapse',
+      textAlign: 'left', // Align text to the left for proper indentation
+    },
+    tableHead: {
+      backgroundColor: '#007BFF',
+      color: '#fff',
+      fontSize: '1rem',
+      fontWeight: 'bold',
+    },
+    tableRow: {
+      borderBottom: '1px solid #ddd',
+    },
+    tableCell: {
+      padding: '10px',
+      fontSize: '0.9rem',
+      color: '#555',
+    },
+    evenRow: {
+      backgroundColor: '#f5f5f5',
+    },
+    oddRow: {
+      backgroundColor: '#ffffff',
+    },
+    
+  
+  
+
 };
 
 export default ClaimForecastPage;

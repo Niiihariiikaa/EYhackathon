@@ -201,7 +201,7 @@ const AutomatedCallbacks = () => {
                     </div>
                     <button type="submit" style={{
                         padding: '12px', 
-                        backgroundColor: '#4CAF50', 
+                        backgroundColor: ' rgb(26 192 33)', 
                         color: '#fff', 
                         borderRadius: '8px', 
                         border: 'none', 
@@ -224,7 +224,7 @@ const AutomatedCallbacks = () => {
                     overflow: 'hidden', 
                     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                 }}>
-                    <thead style={{ backgroundColor: '#4CAF50', color: '#fff' }}>
+                    <thead style={{ backgroundColor: 'rgb(26 192 33)', color: '#fff' }}>
                         <tr>
                             <th style={{ padding: '12px', border: '1px solid #ddd' }}>Name</th>
                             <th style={{ padding: '12px', border: '1px solid #ddd' }}>Phone</th>
@@ -252,7 +252,7 @@ const AutomatedCallbacks = () => {
                                             onClick={() => handleDelete(callback._id)} 
                                             style={{
                                                 padding: '8px 16px',
-                                                backgroundColor: '#FF6347',
+                                                backgroundColor: 'rgb(242 60 28)',
                                                 color: '#fff',
                                                 borderRadius: '8px',
                                                 border: 'none',
